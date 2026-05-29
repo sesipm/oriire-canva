@@ -277,6 +277,8 @@ const page = (d) => `<!doctype html>
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; background: ${Z2.creamAlt}; }
 #root { width: ${d.w}px; height: ${d.h}px; margin: 0 auto; overflow: hidden; }
+@page { size: ${d.w}px ${d.h}px; margin: 0; }
+@media print { html, body { background: #fff; } #root { margin: 0; } }
 </style>
 </head>
 <body>

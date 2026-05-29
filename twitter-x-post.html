@@ -17,6 +17,8 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; background: #F4F1EA; }
 #root { width: 1600px; height: 900px; margin: 0 auto; overflow: hidden; }
+@page { size: 1600px 900px; margin: 0; }
+@media print { html, body { background: #fff; } #root { margin: 0; } }
 </style>
 </head>
 <body>
