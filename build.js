@@ -271,14 +271,22 @@ const page = (d) => `<!doctype html>
 <title>Oriire — ${d.title}</title>
 <style>
 @import url('https://api.fontshare.com/v2/css?f%5B%5D=satoshi@300,400,500,700,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600;6..72,700&display=swap');
+@font-face { font-family: 'Newsreader'; font-style: normal; font-weight: 400 700;
+  src: url('assets/fonts/Newsreader-Regular.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Newsreader'; font-style: italic; font-weight: 400 700;
+  src: url('assets/fonts/Newsreader-Italic.ttf') format('truetype'); font-display: swap; }
 :root {${PILL_VARS}
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; background: ${Z2.creamAlt}; }
 #root { width: ${d.w}px; height: ${d.h}px; margin: 0 auto; overflow: hidden; }
 @page { size: ${d.w}px ${d.h}px; margin: 0; }
-@media print { html, body { background: #fff; } #root { margin: 0; } }
+@media print {
+  html, body { background: #fff; }
+  #root { margin: 0; }
+  * { text-rendering: optimizeSpeed; font-kerning: none;
+      font-variant-ligatures: none; font-feature-settings: "liga" 0, "kern" 0; }
+}
 </style>
 </head>
 <body>
